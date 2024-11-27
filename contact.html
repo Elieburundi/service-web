@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyCJxPyU5hL2Xb3KW5jrX4t3qClWCsNgJb4",
+          authDomain: "elieprojetfirebase.firebaseapp.com",
+          projectId: "elieprojetfirebase",
+          storageBucket: "elieprojetfirebase.firebasestorage.app",
+          messagingSenderId: "481346225046",
+          appId: "1:481346225046:web:b8921d8e6a914d3c1813b7"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Exporter db pour l'utiliser dans contact.js
+         window.db = db;
+      </script>
+</head>
+<body> 
+    <section id="comment-form">
+        <h1>Contactez-Nous</h1>
+        <form id="contactfirebase">
+            <div class="form-control">
+                <label for="name">Votre Nom:</label>
+                <input type="text" name="name" id="name" required autofocus pattern="[A-Za-zÀ-ÿ\s]{2,20}">
+            </div>
+            <div class="form-control">
+                <label for="pname">Votre Prénom:</label>
+                <input type="text" name="pname" id="pname" required pattern="[A-Za-zÀ-ÿ\s]{2,20}">
+            </div>
+            <div class="form-control">
+                <label for="adress">Votre Adresse:</label>
+                <input type="text" name="adress" id="adress" required>
+            </div>
+            <div class="form-control">
+                <label for="tel">Numéro de Téléphone:</label>
+                <input type="tel" name="tel" id="telephone" required pattern="[0-9]*">
+            </div>
+            <div class="form-control">
+                <label for="object">Objet:</label>
+                <input type="text" name="object" id="object" required>
+            </div>
+            <div class="form-control">
+                <label for="msg">Votre Message:</label>
+                <textarea name="msg" id="message" cols="30" rows="5" required></textarea>
+            </div>
+            <button type="submit" name="valider" id="submit ">Envoyer</button>
+        </form>
+    </section>
+   
+
+    <script src="contact.js" type="module"></script> 
+</body>
+</html>
+
+
